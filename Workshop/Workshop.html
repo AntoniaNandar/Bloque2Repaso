@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+        }
+
+        img {
+            width: 20em;
+            height: 18em;
+            padding: 1em;
+        }
+
+        h1 {
+            color: darkblue;
+            text-align: center;
+            font-size: 5em;
+        }
+
+        button {
+            padding: 0.5em;
+            margin: 0.5em;
+            background: darkblue;
+            border: none;
+            color: white;
+            border-radius: 15%;
+        }
+
+        .compra {
+            padding: 2em;
+            margin: 0.5em;
+            background: darkblue;
+            color: white;
+            width: 16em;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .remove, #formulario{
+            display: none;
+        }
+    </style>
+    <h1>Trending Sport Shoes</h1>
+    <button><a href="#listaCarrito">Ver carrito de compras</a></button>
+    <ul id="lista">
+    </ul>
+
+    <br>
+    <br>
+
+    <section>
+        <h2>Carrito de compras</h2>
+        <ul id="listaCarrito">
+            <li class="liCarrito">no haz agregado nada aun</li>
+        </ul>
+        <button class="compra">Comprar</button>
+        <div id="formulario">
+            <h2>Proceso de pago</h2>
+            <form action="" method="">
+                <fieldset>
+                    <legend>
+                        <h2><em>Datos Personal</em></h2>
+                    </legend>
+                    <div>
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Antonia" tabindex="1" required>
+                    </div><br>
+                    <div>
+                        <label for="apellido">Apellidos</label>
+                        <input type="text" id="apellido" name="apellido" placeholder="Nandar Ramos" tabindex="2"
+                            required>
+                    </div><br>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="ejemplo@gmail.com" tabindex="3"
+                            required>
+                    </div><br>
+
+                    <input type="submit" value="Aceptar" id="aceptarDatos">
+                    <input type="reset" value="Limpiar">
+                </fieldset>
+                <fieldset>
+                    <legend>
+                        <h2><em>Datos de pago</em></h2>
+                    </legend>
+                    <div>
+                        <p>Metos de pago</p>
+                        <input type="radio" name="metodoContra" value="contraEntrega" id="contraEntrega" required tabindex="5">
+                        <label for="metodoContra">Contra Entrega</label><br>
+
+                        <input type="radio" name="metodoOOnline" value="data_science" id="data_science">
+                        <label for="metodoOnline">Pago en linea</label><br>
+
+                    </div><br>
+
+                    <div>
+                        <p>Pagar con:</p>
+                        <input type="radio" name="data" id="data" value="data">
+                        <label for="data">Data credito</label><br>
+
+                        <input type="radio" name="banco" id="banco" value="banco">
+                        <label for="banco">Banco</label><br>
+
+                        <input type="radio" name="credit" id="credit" value="credit">
+                        <label for="credit">credit card</label><br>
+
+                        <input type="radio" name="ninguno" id="ninguno" value="ninguno">
+                        <label for="ninguno">ninguno</label><br>
+                    </div><br>
+
+                </fieldset><br>
+                <div>
+                    <input type="submit" value="Realizar compra" id="compraRealizada">
+                    <input type="reset" value="Limpiar">
+                </div><br>
+            </form>
+        </div>
+
+    </section>
+    <script src="Workshop.js"></script>
+</body>
+
+</html>
