@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <style>
+        .carousel {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+        }
+        #imagen {
+            width: 100%;
+            height: 400px;
+            background-size: cover;
+        }
+    </style>
+    <div class="carousel">
+        <button id="retroceder">Retroceder</button>
+        <img src="" alt="img" id="imagen">
+        <button id="avanzar">Avanzar</button>
+    </div>
+    <div class="controles">
+        <button id="play">Play</button>
+        <button id="stop" disabled>Stop</button>
+    </div>
+    <script src="verMas.js"></script>   
+</body>
+</html>

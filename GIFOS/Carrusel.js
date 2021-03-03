@@ -29,7 +29,7 @@ function cambiarImagen(){
 }*/
 
 //CAMBIAR IMAGENES CON 3 IMAGNES 
-var imagen = document.getElementById('imagen')
+/*var imagen = document.getElementById('imagen')
 var imagen2 = document.getElementById('imagen2')
 var imagen3 = document.getElementById('imagen3')
 var src = imagen.getAttribute('src')
@@ -84,4 +84,6 @@ function cambiarImagen(){
     /*for (let i = 0; i < imagenes.length; i++) {
         imagenes[i].src = imagenAMostrar,
     }*/
-}
+//}
+
+
