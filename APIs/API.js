@@ -21,6 +21,7 @@ function vermass() {
     buscar(numero)
 }
 
+
 //Activar la busqueda del gif y mostrarlos en pantalla
 function buscar() {
     let value = inputSearch.value
@@ -39,9 +40,6 @@ function buscar() {
                 contenedor.appendChild(gif)
             }
         }).catch(console.error);
-    if (value === value) {
-        console.log('repetido')
-    }
 }
 
 //AUTOCOMPLETE DEL BUSCADOR
@@ -58,12 +56,15 @@ function autocomplete(event) {
                 ul.appendChild(li)
             }
         })
-    if (inputValue === '') {
-        ul.innerHTML = '';
-    }
     if (event.key === 'Enter') {
         buscar()
         ul.classList.add('remove')
         contenedor.innerHTML = ''
+    }    
+    if (inputValue === '') {
+        ul.innerHTML = '';
+    } else{
+        ul.removeAttribute('class')
     }
+    
 }
