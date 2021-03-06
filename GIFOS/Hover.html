@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #img {
+            width: 700px;
+            height: 400px;
+        }
+
+        #imgDiv {
+            background-color: #572EE5;
+            width: 700px;
+            height: 400px;
+        }
+
+        .remove {
+            display: none;
+        }
+
+        .hover {
+            /*opacity: 0.45; */
+            opacity: 60%;
+        }
+
+        .hoverIconos {
+            opacity: 70%;
+        }
+
+        #iconos {
+            position: absolute;
+            margin-left: 25em;
+            z-index: 1;
+        }
+
+        .icono1,
+        .icono2,
+        .icono3 {
+            padding: 2em;
+        }
+
+        section {
+            margin-top: 6em;
+            margin-left: 6em;
+        }
+
+        #iconos>p {
+            color: #ffffff;
+            margin-left: -23em;
+        }
+
+        .pHover {
+            margin-top: 13em;
+        }
+
+        .max {
+            width: 90vw;
+            height: 90vw;
+            display: flex;
+            align-items: center;
+        }
+
+        #contenedorPadre {
+            width: 76vw
+        }
+
+        .iconoCerrar {
+            position: absolute;
+            margin: -30em 47em;
+        }
+
+        .imgMax {
+            transform: scale(1.2);
+            position: absolute;
+        }
+    </style>
+
+    <section id="contenedorPadre">
+        <div id="iconos" class="remove">
+            <img src="/img/icon-fav-hover.svg" alt="fav" class="icono1" id="fav">
+            <img src="/img/icon-download-hover.svg" alt="download" class="icono2" id="download">
+            <img src="/img/icon-max-hover.svg" alt="max" class="icono3" id="max">
+
+        </div>
+        <div id="imgDiv">
+            <img id="img"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIB-ITEKmVu54ccaJygR9gGdWMkANUGo8VZA&usqp=CAU"
+                alt="placeholder">
+        </div>
+    </section>
+
+    <p id="contenedor">
+    </p>
+
+    <script src="Hover.js"></script>
+</body>
+
+</html>

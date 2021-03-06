@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #iconoDiv {
+            position: absolute;
+        }
+
+        #imgDiv {
+            background: green;
+        }
+
+        .hover {
+            opacity: 40%;
+        }
+
+        .icono {
+            display: none;
+        }
+        .a {
+            z-index: 1;
+        }
+    </style>
+    <section id="contenedor">
+        <div id="iconoDiv" class="icono">
+            <img src="/img/icon-fav-hover.svg" alt="icono">
+        </div>
+        <div id="imgDiv">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIB-ITEKmVu54ccaJygR9gGdWMkANUGo8VZA&usqp=CAU"
+                alt="img" id="img">
+        </div>
+
+    </section>
+    <script>
+        let contenedor = document.getElementById('contenedor')
+        let iconoDiv = document.getElementById('iconoDiv')
+        let imgDiv = document.getElementById('imgDiv')
+        let img = document.getElementById('img')
+        let icono = document.querySelector('.icono')
+
+        contenedor.addEventListener('mouseover', () => {
+            img.classList.add('hover')
+            icono.classList.add('hover')
+            iconoDiv.classList.remove('icono')
+            iconoDiv.classList.add('a')
+        })
+
+        contenedor.addEventListener('mouseout', () => {
+            img.classList.remove('hover')
+            iconoDiv.classList.add('icono')
+            iconoDiv.classList.remove('a')
+        })
+
+        iconoDiv.addEventListener('click', ()=>{
+            console.log('a')
+        })
+
+
+        /*var e = contenedor.firstElementChild
+        e.addEventListener('click', () => {
+            alert('you did it ')
+        })
+
+        contenedor.addEventListener('mouseover', (event) => {
+            img.classList.add('hover')
+            iconoDiv.classList.remove('icono')
+
+
+            /*
+            if(iconoDiv.classList.value === 'icono'){
+                console.log('no esta')
+            } else{
+                console.log('esta')
+                /*var e = contenedor.firstElementChild
+                e.addEventListener('click', ()=>{
+                    alert('you did it ')
+                })*/
+
+        /*iconoDiv.addEventListener('mouseover    ', (event)=>{
+            console.log(event.target)
+        })*/
+
+        /*iconoDiv.addEventListener('click', (event)=>{
+            console.log(event.target)
+            //icono.style.border = '10px solid blue'
+        })*/
+        // }
+        //console.log(event.target)
+        //})
+
+        /*contenedor.addEventListener('click', (event)=>{
+            console.log(event.target)
+            event.stopPropagation()
+        })*/
+
+        /*icono.addEventListener('click', ()=>{
+            console.log('a')
+        })*/
+
+
+
+        //console.log(e)
+
+        /* contenedor.addEventListener('mouseout', () => {
+             img.classList.remove('hover')
+             icono.classList.add('icono')
+         })*/
+
+        //img.style.transform = 'scale(1.9)'
+    </script>
+</body>
+
+</html>
