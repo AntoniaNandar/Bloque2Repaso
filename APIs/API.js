@@ -92,7 +92,6 @@ function vermass() {
     buscar(numero)
 }
 
-
 //Activar la busqueda del gif y mostrarlos en pantalla
 function buscar() {
     let value = inputSearch.value

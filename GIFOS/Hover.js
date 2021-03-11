@@ -100,25 +100,68 @@ function removeHover() {
 
 let urlIcono = '/img/close.svg'
 
-max.addEventListener('click', () => {
-    items.classList.add('imgMax')
-    //Quita evento de la primera
-    iconos.classList.add('remove')
-    items.classList.remove('hover')
+max.addEventListener('click', maximizar)
+
+function maximizar() {
     contenedorP.removeEventListener('mouseover', hover)
     contenedorP.addEventListener('mouseout', removeHover)
-    //Agregat icono de eliminar 
+
+    items.classList.toggle('imgMax')
+    //Quita evento de la primera
+    //iconos.classList.toggle('remove')
+
+    //Agregat icono de eliminar y evento
     let iconoCerrar = document.createElement('img')
+    iconoCerrar.addEventListener('click', close(iconoCerrar))
     iconoCerrar.setAttribute('src', urlIcono);
     iconoCerrar.classList.add('iconoCerrar')
     contenedorP.appendChild(iconoCerrar)
     contenedorP.appendChild(fav)
     contenedorP.appendChild(download)
     fav.style.margin = '1em 0 0 36em'
-})
+}
 
-function gifs() {
-    fetch('https://api.giphy.com/v1/gifs/trending?api_key=r04zELcPYCkaQQ8Eaboohd6UpRglZ1Le&limit=3&rating=g')
+function close(iconoCerrar){
+    max.removeEventListener('click', maximizar)
+    console.log('log')
+    items.classList.remove('imgMax')
+    //imgDiv.removeChild(iconoCerrar)
+    contenedorP.addEventListener('mouseover', hover)
+}
+
+
+/*function maximizar() {
+    contenedorP.removeEventListener('mouseover', hover)
+    contenedorP.addEventListener('mouseout', removeHover)
+
+    items.classList.toggle('imgMax')
+    //Quita evento de la primera
+    //iconos.classList.toggle('remove')
+
+    //Agregat icono de eliminar y evento
+    let iconoCerrar = document.createElement('img')
+    iconoCerrar.addEventListener('click', close)
+    iconoCerrar.setAttribute('src', urlIcono);
+    iconoCerrar.classList.add('iconoCerrar')
+    contenedorP.appendChild(iconoCerrar)
+    contenedorP.appendChild(fav)
+    contenedorP.appendChild(download)
+    fav.style.margin = '1em 0 0 36em'
+}
+
+function close(){
+    /*max.removeEventListener('click', maximizar)
+    console.log('log')
+    items.classList.remove('imgMax')
+    //imgDiv.removeChild(iconoCerrar)
+    contenedorP.addEventListener('mouseover', hover)
+
+
+}*/
+
+
+/*function gifs() {
+    fetch('https://api.giphy.com/v1/gifs/trending?api_key=r04zELcPYCkaQQ8Eaboohd6UpRglZ1Le&limit=1&rating=g')
         .then(response => response.json())
         .then(json => {
             console.log(json.data)
@@ -134,7 +177,10 @@ function gifs() {
             }
         }).catch(console.error);
 }
-gifs()
+gifs()*./
+
+let urlP = document.getElementById('url')
+
 
 /*function get (){
 
