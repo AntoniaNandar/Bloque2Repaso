@@ -9,16 +9,16 @@
 
 <body>
     <style>
+        main {
+            margin-top: 10em;
+        }
+
         .iconoCerrar {
             position: absolute;
             margin: -25em 25em;
         }
 
-        #contenedor {
-            margin-top: 10em;
-        }
-
-        #iconoDiv {
+        .iconoDiv {
             position: absolute;
         }
 
@@ -51,21 +51,18 @@
         }
     </style>
     <main>
-        <section id="contenedor">
-            <div id="iconoDiv" class="icono">
-                <img src="/img/icon-fav-hover.svg" alt="fav" class="icono1" id="fav">
-                <img src="/img/icon-download-hover.svg" alt="download" class="icono2" id="download">
-                <img src="/img/icon-max-hover.svg" alt="icono" id="max">
-            </div>
-            <div id="imgDiv">
-            </div>
-        </section>
+        <div class="icono iconoDiv">
+            <img src="/img/icon-fav-hover.svg" alt="fav" id="fav">
+            <img src="/img/icon-download-hover.svg" alt="download" id="download">
+            <img src="/img/icon-max-hover.svg" alt="max" id="max">
+        </div>
+        <div id="gifDiv">
+        </div>
     </main>
 
     <script>
-        let contenedor = document.getElementById('contenedor')
-        let iconoDiv = document.getElementById('iconoDiv')
-        let imgDiv = document.getElementById('imgDiv')
+        let iconoDiv = document.querySelector('.iconoDiv')
+        let gifDiv = document.getElementById('gifDiv')
         let icono = document.querySelector('.icono')
         let max = document.getElementById('max')
 
@@ -95,14 +92,12 @@
                 })
                 .then(info => {
                     getInfoGig()
-                    //contenedor.addEventListener('click', prueba())
                 })
                 .catch(console.error)
         }
         crearGif()
 
         console.log(arrayGif)
-        let main = document.querySelector('main')
 
         function getInfoGig() {
             for (let i = 0; i < arrayGif.length; i++) {
@@ -111,23 +106,23 @@
                 gif.setAttribute('src', element.gifUrl)
                 gif.classList.add('img')
 
-                let imgDiv2 = document.createElement('div')
-                imgDiv2.setAttribute('class', 'imghover')
-                imgDiv.appendChild(imgDiv2)
+                let gifDiv2 = document.createElement('div')
+                gifDiv2.setAttribute('class', 'imghover')
+                gifDiv.appendChild(gifDiv2)
 
 
-                imgDiv2.appendChild(gif)
+                gifDiv2.appendChild(gif)
                 //CLONE
                 let clone = iconoDiv.cloneNode(true)
                 gif.before(clone)
 
-                gif.addEventListener('mouseover', hover())
+                //gif.addEventListener('mouseover', hover())
 
                 /*for (let i = 0; i < imgDiv2.length; i++) {
                     imgDiv2[i].style.border = '5px solid black'
                 }*/
 
-                //imgDiv2.addEventListener('mouseover', hover())
+                //gifDiv2.addEventListener('mouseover', hover())
 
                 let elementoUser = element.user
                 let elementoTitle = element.title
@@ -140,7 +135,7 @@
         //let contenedorGif = document.querySelectorAll('.img')
         //console.log(contenedorGif)
         //for (let i = 0; i < contenedorGif.length; i++) {
-          // contenedorGif[i].style.border = '5px solid black'
+        // contenedorGif[i].style.border = '5px solid black'
         //}
         /*let contenedorGif = document.querySelectorAll('.imghover')
         for (let i = 0; i < contenedorGif.length; i++) {
@@ -152,73 +147,81 @@
             console.log('paso por el contenedor')
         }*/
 
-        /*imgDiv.addEventListener('mouseover', hover)
+        gifDiv.addEventListener('mouseover', hover)
+        gifDiv.addEventListener('mouseout', removeHover)
+
+        /*let img1 = document.querySelectorAll('.img')
+        for (let i = 0; i < img1.length; i++) {
+            console.log(img1[i])
+        }*/
+
+
         function prueba() {
             console.log('pasaste por imgDiv')
-        }*/
-
-        function hover() {
-            let img = document.querySelectorAll('.img')
-            for (let i = 0; i < img.length; i++) {
-                img[i].classList.add('hover')
-            }
-
-            icono.classList.add('hover')
-            iconoDiv.classList.remove('icono')
-            iconoDiv.classList.add('a')
         }
 
 
 
-        //let img = document.getElementsByClassName('img')
-        //img.map(function(i) {console.log(i)})
-        /*console.log(img)
+
+        //console.log(a)  
+        //let a1 = a.item(0)
+        //console.log(a1)
 
 
-        //function recorrerArray(array){
-        for (let i = 0; i < img.length; i++) {
-            console.log(img[i])
-        }
-        //}
-        //console.log(recorrerArray(img))*/
 
 
-        /*contenedor.addEventListener('mouseover', hover)
-        function hover(gifs) {
-            //img.classList.add('hover')
-            //gif.classList.add('hover')
-            //for (let i = 0; i < gif.length; i++) {gif[i].classList.add('hover')}
-            //console.log(gif)
-            //console.log(e.target)
-            //e.classList.add('hover')
-            
-            //for (let i = 0; i < gif.length; i++) {console.log(gif[i])}
-            icono.classList.add('hover')
-            iconoDiv.classList.remove('icono')
-            iconoDiv.classList.add('a')
-            //Agregar parrafos
-            /*let username = document.createElement('p')
-            let title = document.createElement('p')
-            username.textContent = user
-            title.textContent = titulo
-            //username.classList.add('pHover')
-            iconoDiv.appendChild(username)
-            iconoDiv.appendChild(title)*/
-        //}
 
-        /*contenedor.addEventListener('mouseout', removeHover)
-        function removeHover(gif) {
-            //img.classList.remove('hover')
-            for (let i = 0; i < gif.length; i++) {gif[i].classList.remove('hover')}
-            //gif.classList.remove('hover')
-            iconoDiv.classList.add('icono')
-            iconoDiv.classList.remove('a')
-            //Remover los parrafos
-            /*var p = document.querySelectorAll('#iconoDiv > p')
-            for (let i = 0; i < p.length; i++) {
-                iconoDiv.removeChild(p[i])
-            }
+
+
+        /*for (let item of a) {
+            console.log(item())
         }*/
+        /*let a = document.getElementsByClassName('imghover')
+        for (let i = 0; i < a.length; i++) {
+        a[i].addEventListener('mouseover', prueba)   
+            //console.log(a[i])
+        }*/
+        function prueba() {
+            console.log('a')
+        }
+
+
+        function hover(event) {
+            if (event.target !== gifDiv) {
+                /*let img = document.querySelectorAll('.img')
+                for (let i = 0; i < img.length; i++) {
+                    img[i].classList.add('hover')
+                }*/
+                let nuevo = document.querySelectorAll('.iconoDiv')
+
+                event.target.classList.add('hover')
+                //event.target.parentNode.classList.remove('icono')
+                event.target.parentNode.firstChild.classList.remove('icono')
+
+
+
+                //console.log(event.target)
+
+                //icono.classList.add('hover')
+                /*let nuevo = document.querySelectorAll('.iconoDiv')
+                for (let i = 0; i < nuevo.length; i++) {
+                    nuevo[i].classList.remove('icono')
+                    //nuevo[i].classList.add('a')
+                }*/
+            }
+
+        }
+
+        function removeHover(event) {
+            event.target.classList.remove('hover')
+            //event.target.parentNode.firstChild.classList.add('icono')
+            let nuevo = document.querySelectorAll('.iconoDiv')
+            for (let i = 0; i < nuevo.length; i++) {
+                nuevo[i].classList.add('icono')
+                //nuevo[i].classList.add('a')
+            }
+
+        }
     </script>
 </body>
 
